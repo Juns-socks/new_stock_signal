@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>시세포착 프로그램</title>
+</head>
+<body>
+<h2>1. ChatID 알러가기</h2>
+<form action="/submitFirst" method="post">
+  이름: <input type="text" name="name"/><br/>
+  Chat ID: <input type="text" name="chatId"/><br/>
+  <button type="submit" name="action" value="확인">확인</button>
+  <button type="submit" name="action" value="초기화">초기화</button>
+  <a href="https://t.me/yourbot" target="_blank">
+    <button type="button">chatid알러가기</button>
+  </a>
+</form>
+
+<hr/>
+<h2>2. 기본 조건</h2>
+<form action="/submitSecond" method="post">
+  기준:
+  <select name="basicMetric">
+    <option>시가총액</option>
+    <option>상장일 수</option>
+  </select><br/>
+  수치: <input type="text" name="basicValue"/><br/>
+  <button type="submit" name="action" value="추가">추가</button>
+  <button type="submit" name="action" value="확인">확인</button>
+</form>
+
+<hr/>
+<h2>3. 기술적 지표</h2>
+<form action="/submitThird" method="post">
+  지표:
+  <select name="techMetric">
+    <option>RSI</option>
+    <option>볼린저밴드</option>
+  </select><br/>
+  주기:
+  <select name="term">
+    <option>일봉</option>
+    <option>주봉</option>
+  </select><br/>
+  일 수: <input type="text" name="days" /><br/>
+  수치: <input type="text" name="techValue" /><br/>
+  <button type="submit" name="action" value="추가">추가</button>
+  <button type="submit" name="action" value="확인">확인</button>
+</form>
+</body>
+</html>
